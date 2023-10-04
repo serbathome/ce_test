@@ -22,17 +22,17 @@
                 .catch(function (error) {
                     console.log(error);
                 });
-            // send the form to the server
-            axios.post('https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api', {
-                name: document.getElementById("name").value,
-                message: document.getElementById("message").value
-            })
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+            // // send the form to the server
+            // axios.post('https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api', {
+            //     name: document.getElementById("name").value,
+            //     message: document.getElementById("message").value
+            // })
+            //     .then(function (response) {
+            //         console.log(response);
+            //     })
+            //     .catch(function (error) {
+            //         console.log(error);
+            //     });
             return false;
         }
 
