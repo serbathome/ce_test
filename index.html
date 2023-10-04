@@ -5,54 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>form</title>
 </head>
 
 <body>
-    <script>
-
-        function checkCookie(cookieName, domain) {
-            const cookies = document.cookie.split(';');
-
-            for (let i = 0; i < cookies.length; i++) {
-                const cookie = cookies[i].trim();
-                console.log(cookie);
-
-                // Check if this cookie matches the desired name and domain
-                if (cookie.startsWith(`${cookieName}=`) && cookie.includes(`domain=${domain}`)) {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        function goToCostEstimator() {
-
-            if (!checkCookie('AppServiceAuthSession', 'jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net')) {
-                console.log("not authenticated");
-                window.location.href = "https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net";
-                authenticated = true;
-                return false;
-            }
-            else {
-                console.log("authenticated");
-                document.getElementById('form').submit();
-                return false;
-            }
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('submit').onclick = goToCostEstimator;
-        });
-    </script>
     <div class="container">
-        <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post" id="form">
+        <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post">
             <!--form action="http://127.0.0.1:5000/api" method="post" -->
             <div class="field">
                 <label class="label">Name</label>
                 <div class="control">
-                    <input class="input" id="name" type="text" placeholder="Text input" name="name">
+                    <input class="input" type="text" placeholder="Text input" name="name">
                 </div>
             </div>
 
@@ -65,7 +28,7 @@
 
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-link" id="submit">Submit</button>
+                    <button class="button is-link">Submit</button>
                 </div>
                 <div class="control">
                     <button class="button is-link is-light">Cancel</button>
