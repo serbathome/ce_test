@@ -17,6 +17,7 @@
             axios.get('https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/')
                 .then(function (response) {
                     console.log(response);
+                    document.window.location.href = response.data.redirect;
                     console.log("trigger authentification");
                 })
                 .catch(function (error) {
