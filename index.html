@@ -12,6 +12,7 @@
 <body>
     <script>
         function goToCostEstimator() {
+            alert('aaa');
             // send get request to the server
             axios.get('https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/')
                 .then(function (response) {
@@ -32,7 +33,15 @@
                 .catch(function (error) {
                     console.log(error);
                 });
+            return false;
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('submit').onclick = goToCostEstimator;
+        });
+
+
+
     </script>
     <div class="container">
         <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post">
@@ -53,7 +62,7 @@
 
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-link" onclick="goToCostEstimator">Submit</button>
+                    <button class="button is-link" id="submit">Submit</button>
                 </div>
                 <div class="control">
                     <button class="button is-link is-light">Cancel</button>
