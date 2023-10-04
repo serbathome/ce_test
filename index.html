@@ -7,23 +7,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>form</title>
+    <script>
+        var authenticated = false;
+    </script>
 </head>
 
 <body>
     <script>
+
         function goToCostEstimator() {
-            window.open("https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/", "_blank");
 
-            document.getElementById('form').submit();
-            return false;
+            if (!authenticated) {
+                console.log("not authenticated");
+                window.location.href = "https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net";
+                authenticated = true;
+                return false;
+            }
+            else {
+                console.log("authenticated");
+                document.getElementById('form').submit();
+                return false;
+            }
         }
-
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('submit').onclick = goToCostEstimator;
         });
-
-
-
     </script>
     <div class="container">
         <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post" id="form">
