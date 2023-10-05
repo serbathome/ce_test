@@ -6,11 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>form</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('submit').onclick = (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                console.log('clicked');
+                newWindow = window.open("https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api", '_blank')
+                var timer = setInterval(function () {
+                    if (newWindow.closed) {
+                        clearInterval(timer);
+                        document.getElementById('form').submit();
+                    }
+                }, 1000);
+            }
+        });
+    </script>
 </head>
 
 <body>
     <div class="container">
-        <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post" target="_blank">
+        <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post" id="form">
             <!--form action="http://127.0.0.1:5000/api" method="post" -->
             <!--div class="field">
                 <label class="label">Name</label>
@@ -28,7 +44,7 @@
 
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-link">Estimate price in cost estimator</button>
+                    <button class="button is-link" id="submit">Estimate price in cost estimator</button>
                 </div>
             </div>
         </form>
