@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>form</title>
     <script>
+
+        function submitForm() {
+            document.getElementById('form').submit();
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('submit').onclick = (event) => {
                 event.preventDefault();
@@ -17,7 +22,8 @@
                     if (newWindow.closed) {
                         clearInterval(timer);
                         console.log('submit form and close window');
-                        document.getElementById('form').submit();
+                        //document.getElementById('form').submit();
+                        submitForm();
                     }
                 }, 1000);
             }
