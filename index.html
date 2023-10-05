@@ -16,13 +16,10 @@
             document.getElementById('btn_submit').onclick = (event) => {
                 event.preventDefault();
                 event.stopPropagation();
-                console.log('clicked');
                 newWindow = window.open("https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api", '_blank')
                 var timer = setInterval(function () {
                     if (newWindow.closed) {
                         clearInterval(timer);
-                        console.log('submit form and close window');
-                        //document.getElementById('form').submit();
                         submitForm();
                     }
                 }, 1000);
@@ -34,21 +31,8 @@
 <body>
     <div class="container">
         <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post" id="form" target="_blank">
-            <!--form action="http://127.0.0.1:5000/api" method="post" -->
-            <!--div class="field">
-                <label class="label">Name</label>
-                <div class="control"-->
             <input type="text" name="name" value="something" hidden>
-            <!--/div>
-            </div-->
-
-            <!--div class="field">
-                <label class="label">Message</label>
-                <div class="control"-->
             <input type="text" name="message" value="another value" hidden>
-            <!--/div>
-            </div-->
-
             <div class="field is-grouped">
                 <div class="control">
                     <button class="button is-link" id="btn_submit" type="submit">Estimate price in cost estimator</button>
