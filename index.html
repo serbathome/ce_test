@@ -16,6 +16,7 @@
                 var timer = setInterval(function () {
                     if (newWindow.closed) {
                         clearInterval(timer);
+                        console.log('submit form and close window');
                         document.getElementById('form').submit();
                     }
                 }, 1000);
@@ -44,7 +45,7 @@
 
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-link" id="submit">Estimate price in cost estimator</button>
+                    <button class="button is-link" id="submit" type="submit">Estimate price in cost estimator</button>
                 </div>
             </div>
         </form>
