@@ -6,31 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>EBD form</title>
-    <!--script>
-        function submitForm() {
-            document.getElementById('form').submit();
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('btn_submit').onclick = (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                newWindow = window.open("https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api", '_blank')
-                var timer = setInterval(function () {
-                    if (newWindow.closed) {
-                        clearInterval(timer);
-                        submitForm();
-                    }
-                }, 1000);
-            }
-        });
-    </script-->
 </head>
 
 <body>
     <div class="container">
         <div class="section">
             <div class="box">
-                <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post" id="form">
+                <form action="https://jolly-stone-17db500215be461fad0fee28b2915c58.azurewebsites.net/api" method="post" id="form" target="_blank">
                     <input type="text" name="name" value="something" hidden>
                     <input type="text" name="message" value="another value" hidden>
                     <div class="field is-grouped">
